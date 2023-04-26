@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { addDoc, collection, collectionData, deleteDoc, Firestore } from '@angular/fire/firestore'
+import { addDoc, collection, collectionData, deleteDoc, doc, Firestore, getDocs, onSnapshot, query, updateDoc, where } from '@angular/fire/firestore'
 import { Observable } from 'rxjs';
 import { Car } from '../Models/car'
 
@@ -19,8 +19,13 @@ export class CarService {
     const myCollection = collection(this.fs, 'cars');
     addDoc(myCollection, car);
   }
-  
-  deleteCar(car:Car){
-    // deleteDoc(myCollection)
+
+  deleteCar(car : Car){
+    
   }
+
+  updateCar(car: Car) {
+    
+  }
+  
 }

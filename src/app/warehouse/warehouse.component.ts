@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CarService } from '../Services/car.service';
 import { Car } from '../Models/car'
+import { map, take } from 'rxjs';
 
 
 @Component({
@@ -37,6 +38,10 @@ ngOnInit(): void {
   addCar(){
     let newCar = {Brand: this.newBrand, Model: this.newModel, YearOfReg: this.newYearOfReg, Kilometers: this.newKilometers, Price: this.newPrice};
     this.carService.addCar(newCar);
+  }
+
+  deleteCar(){
+    
   }
 
   openModal(){
