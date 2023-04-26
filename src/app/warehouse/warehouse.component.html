@@ -1,0 +1,108 @@
+<nav class="flexContainer">
+    <a id="homeLink" routerLink="/home"><img id="logo" src="../../assets/carDealLogo.png" alt="Car Dealership Logo"></a>
+    <a id="warehouseLink"  routerLink="/warehouse">Warehouse</a>    
+  </nav>
+
+  <main>
+    <section class="tableContainer">
+      <table mat-table [dataSource]="carsFromDB" class="mat-elevation-z8 demo-table">
+        <!-- Brand Column -->
+        <ng-container matColumnDef="Brand">
+          <th mat-header-cell *matHeaderCellDef>Brand</th>
+          <td mat-cell *matCellDef="let element">{{element.Brand}}</td>
+        </ng-container>
+
+        <!-- Model Column -->
+        <ng-container matColumnDef="Model">
+          <th mat-header-cell *matHeaderCellDef>Model</th>
+          <td mat-cell *matCellDef="let car">{{car.Model}}</td>
+        </ng-container>
+
+        <!-- YearOfReg Column -->
+        <ng-container matColumnDef="YearOfReg">
+          <th mat-header-cell *matHeaderCellDef>YearOfReg</th>
+          <td mat-cell *matCellDef="let car">{{car.YearOfReg}}</td>
+        </ng-container>
+
+        <!-- Kilometers Column -->
+        <ng-container matColumnDef="Kilometers">
+          <th mat-header-cell *matHeaderCellDef>Kilometers</th>
+          <td mat-cell *matCellDef="let car">{{car.Kilometers}}</td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="Price">
+          <th mat-header-cell *matHeaderCellDef>Price</th>
+          <td mat-cell *matCellDef="let car">{{car.Price}}</td>
+        </ng-container>
+
+        <!-- Delete Column -->
+        <ng-container matColumnDef="Delete">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let car"><button mat-raised-button color="warn">Delete</button></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['Brand','Model','YearOfReg','Kilometers','Price','Delete']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['Brand','Model','YearOfReg','Kilometers','Price','Delete'];"></tr>
+      </table>
+    </section>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close" (click)="closeModal()">&times;</span>
+          <section class="formContainer">
+              <mat-form-field appearance="fill">
+                <mat-label>Enter car brand</mat-label>
+                <input matInput placeholder="Mercedes" [(ngModel)]="newBrand" required>
+                <button *ngIf="newBrand" matSuffix mat-icon-button aria-label="Clear" (click)="newBrand=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Enter car model</mat-label>
+                <input matInput placeholder="S-Class" [(ngModel)]="newModel" required>
+                <button *ngIf="newModel" matSuffix mat-icon-button aria-label="Clear" (click)="newModel=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+              
+              <mat-form-field appearance="fill">
+                <mat-label>Enter car year of reg</mat-label>
+                <input matInput placeholder="" matInput [(ngModel)]="newYearOfReg" required>
+                <button *ngIf="newYearOfReg" matSuffix mat-icon-button aria-label="Clear" (click)="newYearOfReg=0">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Enter car kilometers</mat-label>
+                <input matInput placeholder="" matInput [(ngModel)]="newKilometers" required>
+                <button *ngIf="newKilometers" matSuffix mat-icon-button aria-label="Clear" (click)="newKilometers=0">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Enter car price</mat-label>
+                <input matInput placeholder="" matInput [(ngModel)]="newPrice" required>
+                <button *ngIf="newPrice" matSuffix mat-icon-button aria-label="Clear" (click)="newPrice=0">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <button (click)="addCar()" mat-stroked-button>Save</button>
+          </section>
+      </div>
+    </div>
+
+    <section class="buttonContainer">
+      <button mat-raised-button (click)="openModal()">Add car</button>
+      <button mat-raised-button>Update car</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2023 Radu-Nicolae Siderias</span>
+  </footer>

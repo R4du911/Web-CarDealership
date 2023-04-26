@@ -1,0 +1,41 @@
+<nav class="flexContainer">
+  <a id="homeLink" routerLink="/home"><img id="logo" src="../../assets/carDealLogo.png" alt="Car Dealership Logo"></a>
+  <a id="warehouseLink"  routerLink="/warehouse">Warehouse</a>    
+</nav>
+
+<main>
+  <div class="descriptionContainer">
+    <div class="flexDescription">
+      <h1>Vericu' Tuning</h1>
+      <p>Explore our diverse selection of new and used cars from top brands <br>
+        Our friendly staff are here to assist you in finding the perfect fit <br>
+        Browse our inventory and schedule a test drive today</p>
+    </div>
+    
+    <img id="mainPicture" src="../../assets/carDealerPic.png" alt="Car Dealership Photo">
+  </div>
+
+  <section class="buttonsContainer">
+    <div class="example-button-row">
+      <button mat-button color="primary" (click)="showMoreButtons()">Show More</button>
+      <button mat-button color="accent" (click)="showLessButtons()">Show less</button>
+    </div>
+  </section>
+
+  <section *ngIf="showSocialMedia===true" class="socialMediaContainer">
+    <a href="https://ro-ro.facebook.com/" class="icon"><img src="../../assets/facebook.png" alt="Facebook Logo"></a>
+    <a href="https://www.instagram.com/" class="icon"><img src="../../assets/instagram.png" alt="Instagram Logo"></a>
+    <a href="https://www.linkedin.com/" class="icon"><img src="../../assets/linkedin.png" alt="LinkedIn Logo"></a>
+  </section>
+
+</main>  
+
+<footer>
+  <span>© 2023 Radu-Nicolae Siderias</span>
+</footer>
+
+
+
+
+  
+  

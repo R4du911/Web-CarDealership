@@ -1,0 +1,133 @@
+.flexContainer {
+    height: 8vh;
+    background-color: rgba(62, 171, 148, 0.75);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flexContainer a {
+    text-decoration: none;
+    color: #1a5e5f;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.flexContainer a:hover {
+    color: #e6f7f7;
+}
+
+#homeLink {
+    margin-left: 3%;
+}
+
+#warehouseLink {
+    margin-right: 3%;
+    margin-left: auto;
+}
+
+#logo {
+    width: 25%;
+    height: 25%;
+}
+
+main {
+    min-height: 86vh;
+}
+
+.descriptionContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flexDescription {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flexDescription h1 {
+    font-size: xx-large;
+    margin-bottom: 8%;
+}
+
+#mainPicture {
+    width: 27%;
+    height: 27%;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.socialMediaContainer {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.icon > img {
+    height: 80%;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 6vh;
+    background-color: #11999E;
+    font-style: italic;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+@media screen and (max-width: 430px){
+    .flexDescription h1 {
+        font-size: x-large;
+        margin-top: 4%;
+    }
+
+    .flexDescription p {
+        font-size: small;
+    }
+
+    #mainPicture {
+        margin: 0 auto;
+        width: 65%;
+        height: 65%;
+    }
+
+    .socialMediaContainer{
+        margin-bottom: 5%;
+    }
+
+}
+
+@media screen and (max-width: 800px) and (min-width: 440px){
+    .socialMediaContainer {
+        margin-top: 8%;
+        gap: 8%;
+    }
+
+    .icon > img {
+        height: 140%;
+    }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 810px){
+    .socialMediaContainer {
+        margin-top: 15%;
+        gap: 10%;
+    }
+
+    .icon > img {
+        height: 180%;
+    }
+}

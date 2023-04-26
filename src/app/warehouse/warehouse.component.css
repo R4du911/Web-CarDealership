@@ -1,0 +1,104 @@
+.flexContainer {
+    height: 8vh;
+    background-color: rgba(62, 171, 148, 0.75);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flexContainer a {
+    text-decoration: none;
+    color: #1a5e5f;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.flexContainer a:hover{
+    color: #e6f7f7;
+}
+
+#homeLink {
+    margin-left: 3%;
+}
+
+#warehouseLink {
+    margin-right: 3%;
+    margin-left: auto;
+}
+
+#logo {
+    width: 25%;
+    height: 25%;
+}
+
+main {
+    min-height: 86vh;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+
+.buttonContainer > button{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.tableContainer {
+    margin: 3% auto;
+    width: 90%;
+    overflow-x: auto;
+}
+
+.formContainer mat-form-field{
+    margin-right: 2%;
+}
+
+.formContainer button {
+    display: block;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 6vh;
+    background-color: #11999E;
+    font-style: italic;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
