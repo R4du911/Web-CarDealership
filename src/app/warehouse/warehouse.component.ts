@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, Input, OnInit, ViewChild} from '@angular/core';
 import { CarService } from '../Services/car.service';
 import { Car } from '../Models/car'
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort, Sort } from '@angular/material/sort';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 
 @Component({
@@ -12,8 +14,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 
 export class WarehouseComponent implements OnInit{
-  
-  inputValue: string = '';
+
   carsFromDB : Car[] = [];
 
   newBrand : String = '';
@@ -22,17 +23,17 @@ export class WarehouseComponent implements OnInit{
   newKilometers : number = 0;
   newPrice : number = 0;
 
-  carSavedToDelete : Car = new Car;
-
-  constructor(private carService : CarService) {}
-
   dataSource = new MatTableDataSource<Car>(this.carsFromDB);
+  carSavedToDelete : Car = new Car;
+  
+  @ViewChild(MatPaginator) paginator !: MatPaginator;
+  @ViewChild(MatSort) sort !: MatSort;
 
-  @ViewChild(MatPaginator, {static: false})
-  set paginator(value: MatPaginator) {
-    if (this.dataSource){
-      this.dataSource.paginator = value;
-    }
+  constructor(private carService : CarService, private _liveAnnouncer: LiveAnnouncer) {}
+
+  ngAfterViewInit(){
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   ngOnInit(): void {
@@ -41,7 +42,7 @@ export class WarehouseComponent implements OnInit{
 
   getCars(){
     this.carService.getCars().subscribe(result=>{
-        this.carsFromDB = result;
+        this.dataSource.data = result;
       }
     )
   }
@@ -97,5 +98,14 @@ export class WarehouseComponent implements OnInit{
   closeUpdateModal(){
     document.getElementById("UpdateModal")!.style.display = "none";
   }
+
+  announceSortChange(sortState: Sort) {
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared');
+    }
+  }
+  
 }
 
