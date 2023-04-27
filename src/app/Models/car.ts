@@ -1,5 +1,4 @@
 export class Car {
-    Id?:string;
     Brand:String;
     Model:String;
     YearOfReg:number;
