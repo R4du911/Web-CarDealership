@@ -91,6 +91,9 @@ export class WarehouseComponent implements OnInit{
     this.carSavedToDelete = car;
     this.newBrand = car.Brand;
     this.newModel = car.Model;
+    this.newYearOfReg = car.YearOfReg;
+    this.newKilometers = car.Kilometers;
+    this.newPrice = car.Price;
 
     document.getElementById("UpdateModal")!.style.display = "block";
   }
@@ -106,6 +109,6 @@ export class WarehouseComponent implements OnInit{
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
-  
+
 }
 
