@@ -67,7 +67,7 @@
           <span class="close" (click)="closeAddModal()">&times;</span>
           <section class="formContainer">
               <mat-form-field appearance="fill">
-                <mat-label>Enter car brand</mat-label>
+                <mat-label>Brand</mat-label>
                 <input matInput placeholder="Mercedes" [(ngModel)]="newBrand" required>
                 <button *ngIf="newBrand" matSuffix mat-icon-button aria-label="Clear" (click)="newBrand=''">
                   <mat-icon>close</mat-icon>
@@ -75,7 +75,7 @@
               </mat-form-field>
 
               <mat-form-field appearance="fill">
-                <mat-label>Enter car model</mat-label>
+                <mat-label>Model</mat-label>
                 <input matInput placeholder="S-Class" [(ngModel)]="newModel" required>
                 <button *ngIf="newModel" matSuffix mat-icon-button aria-label="Clear" (click)="newModel=''">
                   <mat-icon>close</mat-icon>
@@ -83,7 +83,7 @@
               </mat-form-field>
               
               <mat-form-field appearance="fill">
-                <mat-label>Enter car year of reg</mat-label>
+                <mat-label>Year of registration</mat-label>
                 <input matInput placeholder="" matInput [(ngModel)]="newYearOfReg" required>
                 <button *ngIf="newYearOfReg" matSuffix mat-icon-button aria-label="Clear" (click)="newYearOfReg=0">
                   <mat-icon>close</mat-icon>
@@ -91,7 +91,7 @@
               </mat-form-field>
 
               <mat-form-field appearance="fill">
-                <mat-label>Enter car kilometers</mat-label>
+                <mat-label>Kilometers</mat-label>
                 <input matInput placeholder="" matInput [(ngModel)]="newKilometers" required>
                 <button *ngIf="newKilometers" matSuffix mat-icon-button aria-label="Clear" (click)="newKilometers=0">
                   <mat-icon>close</mat-icon>
@@ -99,7 +99,7 @@
               </mat-form-field>
 
               <mat-form-field appearance="fill">
-                <mat-label>Enter car price</mat-label>
+                <mat-label>Price</mat-label>
                 <input matInput placeholder="" matInput [(ngModel)]="newPrice" required>
                 <button *ngIf="newPrice" matSuffix mat-icon-button aria-label="Clear" (click)="newPrice=0">
                   <mat-icon>close</mat-icon>
@@ -117,7 +117,7 @@
           <span class="close" (click)="closeUpdateModal()">&times;</span>
           <section class="formContainer">
               <mat-form-field appearance="fill">
-                <mat-label>Enter car year of reg</mat-label>
+                <mat-label>Year of registration</mat-label>
                 <input matInput placeholder="" matInput [(ngModel)]="newYearOfReg" required>
                 <button *ngIf="newYearOfReg" matSuffix mat-icon-button aria-label="Clear" (click)="newYearOfReg=0">
                   <mat-icon>close</mat-icon>
@@ -125,7 +125,7 @@
               </mat-form-field>
 
               <mat-form-field appearance="fill">
-                <mat-label>Enter car kilometers</mat-label>
+                <mat-label>Kilometers</mat-label>
                 <input matInput placeholder="" matInput [(ngModel)]="newKilometers" required>
                 <button *ngIf="newKilometers" matSuffix mat-icon-button aria-label="Clear" (click)="newKilometers=0">
                   <mat-icon>close</mat-icon>
@@ -133,7 +133,7 @@
               </mat-form-field>
 
               <mat-form-field appearance="fill">
-                <mat-label>Enter car price</mat-label>
+                <mat-label>Price</mat-label>
                 <input matInput placeholder="" matInput [(ngModel)]="newPrice" required>
                 <button *ngIf="newPrice" matSuffix mat-icon-button aria-label="Clear" (click)="newPrice=0">
                   <mat-icon>close</mat-icon>
