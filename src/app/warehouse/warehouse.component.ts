@@ -1,7 +1,8 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { CarService } from '../Services/car.service';
 import { Car } from '../Models/car'
-import { map, take } from 'rxjs';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -23,13 +24,21 @@ export class WarehouseComponent implements OnInit{
 
   constructor(private carService : CarService) {}
 
-ngOnInit(): void {
-    this.getCars();
-}
+  dataSource = new MatTableDataSource<Car>(this.carsFromDB);
+
+  @ViewChild(MatPaginator, {static: false})
+  set paginator(value: MatPaginator) {
+    if (this.dataSource){
+      this.dataSource.paginator = value;
+    }
+  }
+
+  ngOnInit(): void {
+      this.getCars();
+  }
 
   getCars(){
-    this.carService.getCars().subscribe(result=>
-      {
+    this.carService.getCars().subscribe(result=>{
         this.carsFromDB = result;
       }
     )
@@ -40,8 +49,8 @@ ngOnInit(): void {
     this.carService.addCar(newCar);
   }
 
-  deleteCar(){
-    
+  deleteCar(car : Car){
+    this.carService.deleteCar(car);
   }
 
   openModal(){

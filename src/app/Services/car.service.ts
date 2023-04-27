@@ -20,9 +20,24 @@ export class CarService {
     addDoc(myCollection, car);
   }
 
-  deleteCar(car : Car){
-    
+  async deleteCar(car: Car) {
+    const myCollection = collection(this.fs, 'cars');
+    const querySnapshot = await getDocs(myCollection);
+  
+    querySnapshot.forEach((doc) => {
+      const docData = doc.data();
+      if (
+        docData['Brand'] === car.Brand &&
+        docData['Model'] === car.Model &&
+        docData['YearOfReg'] === car.YearOfReg &&
+        docData['Kilometers'] === car.Kilometers &&
+        docData['Price'] === car.Price
+      ) {
+        deleteDoc(doc.ref);
+      }
+    });
   }
+  
 
   updateCar(car: Car) {
     
