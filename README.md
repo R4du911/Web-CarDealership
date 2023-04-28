@@ -1,27 +1,26 @@
 # WebProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+Frontend of a car dealership connected to a Firestore database. 
 
-## Development server
+What I learnt from this project:
+ - Angular framework and Angular Materials
+ - Firebase connection and CRUD operations on a Firestore database
+ - Web designing
+ - HTML, CSS, Typescript 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The website is made up of two pages, the first one being the front page, where the user can see 
+the logo of the dealership, a short description and also some links to the dealership's social media. 
 
-## Code scaffolding
+![image](https://user-images.githubusercontent.com/114949622/235107898-d5c4c7ac-15c8-4c80-a192-084a471dbff9.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The second page features the 'Warehouse' and displays a table with all the cars from the database.
 
-## Build
+![image](https://user-images.githubusercontent.com/114949622/235108924-f59c3f22-c231-4972-b121-6866ec6cd0fe.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+User can press on 'add car' and a modal will show up with a form that enables the user to input all the new data.
 
-## Running unit tests
+![image](https://user-images.githubusercontent.com/114949622/235109620-12eef43a-e582-4476-9314-0d1a11c4c9f1.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+User can also delete or update the cars by pressing on the buttons next to the desired car.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
