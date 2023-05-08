@@ -6,7 +6,7 @@ What I learnt from this project:
  - Angular framework and Angular Materials
  - Firebase connection and CRUD operations on a Firestore database
  - Web designing
- - HTML, CSS, Typescript 
+ - HTML, CSS, TypeScript 
 
 The website is made up of two pages, the first one being the front page, where the user can see 
 the logo of the dealership, a short description and also some links to the dealership's social media. 
